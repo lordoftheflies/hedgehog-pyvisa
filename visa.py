@@ -36,4 +36,5 @@ if __name__ == '__main__':
         util.get_debug_info()
     elif args.command == 'shell':
         from pyvisa import shell
-        shell.main()
+        
+        shell.main('@pi')
