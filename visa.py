@@ -24,6 +24,7 @@ from pyvisa.resources import Resource
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='PyVISA command-line utilities')
+    parser.add_argument("--backend", type=str, choices=['@ni', '@py', '@sim'], default='@py', help='backend implementation (@ni|@py|@sim).')
     subparsers = parser.add_subparsers(title='command', dest='command')
 
     info_parser = subparsers.add_parser('info', help='print information to diagnose PyVISA')
@@ -36,5 +37,5 @@ if __name__ == '__main__':
         util.get_debug_info()
     elif args.command == 'shell':
         from pyvisa import shell
-        
-        shell.main('@pi')
+
+        shell.main(library_path=args.backend)
