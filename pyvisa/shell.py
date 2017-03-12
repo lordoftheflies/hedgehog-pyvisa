@@ -99,10 +99,13 @@ class VisaShell(Cmd):
 
     use_rawinput = True
 
-    def __init__(self, library_path=''):
+    def __init__(self, library_path='', read_termination='\n', write_termination='\n'):
         Cmd.__init__(self)
         self.resource_manager = ResourceManager(library_path)
         self.default_prompt = self.prompt
+
+        self.read_termination = read_termination
+        self.write_termination = write_termination
 
         #: Resource list (used for autocomplete)
         #: Store a tuple with the name and the alias.
@@ -154,7 +157,7 @@ class VisaShell(Cmd):
                 return
 
         try:
-            self.current = self.resource_manager.open_resource(args)
+            self.current = self.resource_manager.open_resource(args, read_termination=self.read_termination, write_termination=self.write_termination)
             print('{0} has been opened.\n'
                   'You can talk to the device using "write", "read" or "query".\n'
                   'The default end of message is added to each message.'.format(args))
@@ -322,6 +325,6 @@ class VisaShell(Cmd):
         return True
 
 
-def main(library_path=''):
-    VisaShell(library_path).cmdloop()
+def main(library_path='', read_termination='\n', write_termination='\n'):
+    VisaShell(library_path, read_termination=read_termination, write_termination=write_termination).cmdloop()
 
