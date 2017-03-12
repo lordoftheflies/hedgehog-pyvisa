@@ -24,6 +24,8 @@ from pyvisa.resources import Resource
 if __name__ == '__main__':
     import argparse
     parser = argparse.ArgumentParser(description='PyVISA command-line utilities')
+    parser.add_argument("--read", type=str, default='\n', help='Read termination character.')
+    parser.add_argument("--write", type=str, default='\n', help='Write termination character.')
     parser.add_argument("--backend", type=str, choices=['@ni', '@py', '@sim'], default='@py', help='backend implementation (@ni|@py|@sim).')
     subparsers = parser.add_subparsers(title='command', dest='command')
 
@@ -38,4 +40,4 @@ if __name__ == '__main__':
     elif args.command == 'shell':
         from pyvisa import shell
 
-        shell.main(library_path=args.backend)
+        shell.main(library_path=args.backend, read_termination=args.read, write_termination=args.write)

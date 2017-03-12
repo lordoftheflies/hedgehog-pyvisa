@@ -325,6 +325,6 @@ class VisaShell(Cmd):
         return True
 
 
-def main(library_path=''):
-    VisaShell(library_path).cmdloop()
+def main(library_path='', read_termination='\n', write_termination='\n'):
+    VisaShell(library_path, read_termination=read_termination, write_termination=write_termination).cmdloop()
 
