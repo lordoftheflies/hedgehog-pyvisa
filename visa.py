@@ -26,7 +26,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='PyVISA command-line utilities')
     parser.add_argument("--read", type=str, default='\n', help='Read termination character.')
     parser.add_argument("--write", type=str, default='\n', help='Write termination character.')
-    parser.add_argument("--backend", type=str, choices=['@ni', '@py', '@sim'], default='@py', help='backend implementation (@ni|@py|@sim).')
+    parser.add_argument("--backend", type=str, default='@py', help='backend implementation (@ni|@py|<Simulation YAML>@sim).')
     subparsers = parser.add_subparsers(title='command', dest='command')
 
     info_parser = subparsers.add_parser('info', help='print information to diagnose PyVISA')
