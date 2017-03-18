@@ -37,7 +37,7 @@ if sys.version_info < (2, 7):
 
 setup(name='hedgehog-pyvisa',
       description='Python VISA bindings for GPIB, RS232, and USB instruments',
-      version='1.9.6',
+      version='1.9.7',
       long_description=long_description,
       author='Torsten Bronger, Gregor Thalhammer, lordoftheflies',
       author_email='bronger@physik.rwth-aachen.de',
