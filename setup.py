@@ -35,7 +35,7 @@ if sys.version_info < (3, 4):
 if sys.version_info < (2, 7):
     requirements.append('unittest2')
 
-setup(name='hedgehog-hedgehog-pyvisa',
+setup(name='hedgehog-pyvisa',
       description='Python VISA bindings for GPIB, RS232, and USB instruments',
       version='2.0.0',
       long_description=long_description,
