@@ -35,16 +35,16 @@ if sys.version_info < (3, 4):
 if sys.version_info < (2, 7):
     requirements.append('unittest2')
 
-setup(name='hedgehog-pyvisa',
+setup(name='hedgehog-hedgehog-pyvisa',
       description='Python VISA bindings for GPIB, RS232, and USB instruments',
-      version='1.9.7',
+      version='2.0.0',
       long_description=long_description,
       author='Torsten Bronger, Gregor Thalhammer, lordoftheflies',
       author_email='bronger@physik.rwth-aachen.de',
       maintainer='lordoftheflies',
       maintainer_email='laszlo.hegedus@cherubits.hu',
-      url='https://github.com/lordoftheflies/pyvisa',
-      test_suite='pyvisa.testsuite.testsuite',
+      url='https://github.com/lordoftheflies/hedgehog-pyvisa',
+      test_suite='hedgehog-pyvisa.testsuite.testsuite',
       keywords='VISA GPIB USB serial RS232 measurement acquisition',
       license='MIT License',
       install_requires=requirements,

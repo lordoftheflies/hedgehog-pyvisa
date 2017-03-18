@@ -94,7 +94,7 @@ class VisaShell(Cmd):
     """Shell for interactive testing.
     """
 
-    intro = '\nWelcome to the VISA shell. Type help or ? to list commands.\n'
+    intro = '\nHEDGEHOG PYVISA SHELL\nWelcome to the VISA shell. Type help or ? to list commands.\n'
     prompt = '(visa) '
 
     use_rawinput = True
